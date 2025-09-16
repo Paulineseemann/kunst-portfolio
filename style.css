@@ -111,7 +111,7 @@ article {
     background: rgba(0,0,0,0.01);
     box-shadow: 8px 8px 0 0 #1110, 0 2px 16px #0001;
     transition: box-shadow 0.3s, background 0.3s;
-    margin-bottom: 150px;
+    margin-bottom: 96px; /* Abstand zwischen den Artikeln vergrößert */
 }
 
 
@@ -454,4 +454,31 @@ header nav ul {
     .profilbild {
       height: 40px;
     }
+}
+
+/* Galerie-Liste als Links mit Unterstrich nur unter der Schrift */
+.gallery-grid + ul {
+    padding-left: 0;
+}
+
+.gallery-grid + ul li {
+    border-bottom: none;
+    padding-bottom: 0;
+    position: relative;
+    display: block;
+    margin-bottom: 1.2em;
+}
+
+.gallery-grid + ul li a {
+    color: #111;
+    text-decoration: none;
+    border-bottom: 1px solid #111;
+    font-weight: 500;
+    transition: border-bottom 0.2s;
+    padding: 2px 2px;
+    display: inline;
+}
+
+.gallery-grid + ul li a:hover {
+    border-bottom: 2px solid #111;
 }
