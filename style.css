@@ -82,9 +82,9 @@ h1::after {
 }
 
 main {
-    padding: 48px 32px;
+    padding: 24px 32px;
     max-width: 700px;
-    margin: 48px auto 32px auto;
+    margin: 24px auto 32px auto;
     background: #fff;
     border-radius: 0;
     box-shadow: none;
@@ -111,17 +111,10 @@ article {
     background: rgba(0,0,0,0.01);
     box-shadow: 8px 8px 0 0 #1110, 0 2px 16px #0001;
     transition: box-shadow 0.3s, background 0.3s;
-    margin-top: 0;
-    margin-bottom: 0;
+    margin-bottom: 150px;
 }
 
-article > p:first-child {
-    margin-top: 0;
-}
 
-article > p:last-child {
-    margin-bottom: 0;
-}
 
 article:hover {
     background: #fafafa;
@@ -441,92 +434,3 @@ body, main, article, .center-left-text {
       height: 40px;
     }
 }
-
-/* Galerie-Raster für vier Bilder */
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
-  margin-bottom: 32px;
-}
-
-.gallery-grid img {
-  width: 100%;
-  max-width: 240px;
-  height: 240px;
-  object-fit: cover;
-  border-radius: 7px;
-  display: block;
-  margin: 0 auto;
-}
-
-/* Für größere Bildabstände auf kleinen Geräten */
-@media (max-width: 600px) {
-  .gallery-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-  }
-  .gallery-grid img {
-    max-width: 120px;
-    height: 120px;
-  }
-}
-
-/* Keine Leerzeilen oben/unten im article */
-article > p:first-child {
-  margin-top: 0;
-}
-article > p:last-child {
-  margin-bottom: 0;
-}
-
-/* Mehr Abstand zwischen den Sections */
-main section {
-  margin-bottom: 72px;
-}
-main section:last-child {
-  margin-bottom: 0;
-}
-
-/* Responsive Anpassungen für main und article */
-@media (max-width: 900px) {
-  main {
-    padding: 24px 8px;
-    max-width: 98vw;
-  }
-  article {
-    padding: 18px 12px 12px 12px;
-    max-width: 98vw;
-    border-radius: 0 16px 16px 0;
-  }
-}
-
-@media (max-width: 600px) {
-  main {
-    padding: 8px 2vw;
-    max-width: 100vw;
-    margin: 8px auto 8px auto;
-  }
-  article {
-    padding: 10px 4px 8px 4px;
-    margin: 18px auto;
-    max-width: 99vw;
-    border-left: 1px solid #111;
-    border-radius: 0 8px 8px 0;
-  }
-}
-
-/* Optional: Galerie im Karussell-Layout für kleine Bildschirme */
-/*
-@media (max-width: 600px) {
-  .gallery-grid {
-    display: block;
-  }
-  .gallery-grid img {
-    width: 100%;
-    max-width: none;
-    height: auto;
-    margin-bottom: 16px;
-  }
-}
-*/
