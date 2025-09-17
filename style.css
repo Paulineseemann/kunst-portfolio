@@ -263,3 +263,12 @@ footer {
     .gallery-grid img { width: 100%; height: auto; }
     .gallery-list { gap: 32px; }
 }
+
+.nowrap {
+    white-space: nowrap;
+}
+@media (max-width: 600px) {
+    .nowrap {
+        white-space: nowrap;
+    }
+}
