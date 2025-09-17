@@ -69,7 +69,7 @@ h1::after {
     position: relative;
 }
 
-.secondtitle::before {
+secondtitle::before {
     content: '';
     display: block;
     width: 32px;
@@ -96,9 +96,10 @@ article {
     justify-content: center;
     align-items: flex-start;
     text-align: left;
-    max-width: 420px;
+    max-width: 700px;   /* jetzt so breit wie main */
+    width: 100%;        /* füllt main komplett aus */
     min-width: 20ch;
-    margin: 72px auto;
+    margin: 72px auto 96px auto;
     background: #fff;
     color: #111;
     padding: 32px 32px 24px 32px;
@@ -111,10 +112,7 @@ article {
     background: rgba(0,0,0,0.01);
     box-shadow: 8px 8px 0 0 #1110, 0 2px 16px #0001;
     transition: box-shadow 0.3s, background 0.3s;
-    margin-bottom: 96px; /* Abstand zwischen den Artikeln vergrößert */
 }
-
-
 
 article:hover {
     background: #fafafa;
