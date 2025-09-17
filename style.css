@@ -26,7 +26,7 @@ p, ul, li, a, main, article, footer {
 
 /* ==== HEADER ==== */
 header {
-    margin-bottom: 16px;
+    margin-bottom: 16px; /* Abstand Header → Main verkleinert */
 }
 
 header nav ul {
@@ -116,16 +116,18 @@ article:hover {
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* immer 2 Spalten */
-    gap: 8px; /* Abstand zwischen Bildern */
-    margin-bottom: 36px;
+    gap: 8px; 
+    max-width: 100%;
+    margin: 0 auto 36px auto;
 }
 
 .gallery-grid img {
-    width: 100%;
-    height: auto;
+    display: block;
+    width: 100%;      /* passt in die Spalte */
+    height: auto;     /* proportional skalieren */
     object-fit: cover;
     border-radius: 7px;
-    max-height: 300px; /* Bilder auf Handys kleiner */
+    max-height: 180px; /* auf kleinen Geräten verkleinert */
 }
 
 /* ==== TEXT / LISTE / LINKS ==== */
@@ -199,9 +201,9 @@ footer img {
     .secondtitle { font-size: 2rem; margin-bottom: 16px; }
     main { padding: 12px 2vw; }
     article { padding: 8px 12px; }
-    .gallery-grid img { max-height: 200px; } /* kleine Handys: Bilder kleiner */
+    .gallery-grid img { max-height: 150px; } /* kleinere Handys */
 }
 
 @media (max-width: 400px) {
-    .gallery-grid img { max-height: 150px; } /* sehr kleine Geräte: noch kleiner */
+    .gallery-grid img { max-height: 120px; } /* sehr kleine Geräte */
 }
