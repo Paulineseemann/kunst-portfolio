@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Didot:wght@400;700&display=swap');
 
 /* ===== Global ===== */
-*, *::before, *::after {
+* {
     box-sizing: border-box; /* verhindert Überlauf durch padding/border */
 }
 
@@ -16,7 +16,7 @@ body {
     overflow-x: hidden; /* verhindert horizontalen Scroll */
 }
 
-/* ===== TYPOGRAFIE ===== */
+/* TYPOGRAFIE */
 h1, h2, h3, h4, h5, h6, .secondtitle {
     font-family: 'Didot', Didot, "Bodoni MT", serif;
     color: #111;
@@ -30,17 +30,41 @@ p, ul, li, a, main, article, footer {
     font-size: 0.98rem;
 }
 
-/* ===== TITEL ===== */
+/* HEADER */
+header {
+    margin-bottom: 16px;
+}
+
+header nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5em;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+header nav ul li::before {
+    content: '→';
+    margin-right: 6px;
+    color: #111;
+    opacity: 0.18;
+    font-size: 1.1em;
+    font-family: 'Didot', Didot, 'Bodoni MT', serif;
+    font-weight: bold;
+}
+
+/* TITEL */
 h1 {
     padding: 32px 0 16px 0;
     text-align: center;
     text-transform: uppercase;
-    font-size: clamp(2rem, 8vw, 5rem);
+    font-size: 5rem;
     margin-top: 0;
     margin-bottom: 48px;
     border-bottom: 1px solid #222;
     position: relative;
-    word-break: break-word;
 }
 
 h1::after {
@@ -57,47 +81,15 @@ h1::after {
 .secondtitle {
     text-align: left;
     margin-bottom: 32px;
-    font-size: clamp(1.4rem, 5vw, 2.2rem);
+    font-size: 2.2rem;
     letter-spacing: 0.08em;
     color: #111;
     border-bottom: 1px solid #222;
     position: relative;
     text-transform: uppercase;
-    word-break: break-word;
 }
 
-/* ===== HEADER ===== */
-header {
-    margin-bottom: 16px;
-    padding: 0 12px; /* Abstand zum Rand */
-}
-
-header nav ul {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap; /* Zeilenumbruch bei kleinen Bildschirmen */
-    gap: 1em;
-    padding: 0;
-    margin: 0;
-    list-style: none;
-}
-
-header nav ul li {
-    font-size: clamp(0.8rem, 3vw, 1rem);
-}
-
-header nav ul li::before {
-    content: '→';
-    margin-right: 6px;
-    color: #111;
-    opacity: 0.18;
-    font-size: 1em;
-    font-family: 'Didot', Didot, 'Bodoni MT', serif;
-    font-weight: bold;
-}
-
-/* ===== MAIN & ARTICLE ===== */
+/* MAIN & ARTICLE */
 main {
     padding: 16px;
     max-width: 100vw;
@@ -111,27 +103,26 @@ article {
     align-items: flex-start;
     text-align: left;
     width: 100%;
-    max-width: 700px;
-    margin: 80px auto;
+    max-width: 700px; /* Begrenzung wie Galerie */
+    margin: 80px auto; /* mittig */
     background: rgba(0,0,0,0.01);
     padding: 16px 24px;
     gap: 1.5em;
     border-radius: 0 16px 16px 0;
     border-left: 2px solid #111;
     box-shadow: 0 2px 16px #0001;
-    transition: box-shadow 0.3s, background 0.3s, transform 0.3s;
+    transition: box-shadow 0.3s, background 0.3s;
 }
 
 article:hover {
     background: #fafafa;
     box-shadow: 0 8px 32px #0002;
-    transform: translateY(-2px);
 }
 
-/* ===== GALERIE GRID (Startseite) ===== */
+/* GALERIE GRID (Startseite) */
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(2, 1fr); /* immer 2 Spalten */
     gap: 8px;
     width: 100%;
     max-width: 100%;
@@ -146,12 +137,12 @@ article:hover {
     border-radius: 7px;
 }
 
-/* ===== GALERIE LISTE (Detailseite) ===== */
+/* GALERIE LISTE (Detailseite) */
 .gallery-list {
     display: flex;
     flex-direction: column;
-    gap: 64px;
-    max-width: 700px;
+    gap: 64px; /* großer Abstand zwischen den Werken */
+    max-width: 700px;   /* gleiche Breite wie article */
     margin: 0 auto;
     width: 100%;
 }
@@ -185,7 +176,7 @@ article:hover {
     margin-right: auto;
 }
 
-/* ===== TEXT / LISTE / LINKS ===== */
+/* TEXT / LISTE / LINKS */
 p {
     margin-bottom: 2em;
     line-height: 2;
@@ -211,6 +202,7 @@ ul li::before {
     opacity: 0.18;
 }
 
+/* LINKS */
 a {
     color: #111;
     border-bottom: 1px solid #111;
@@ -224,19 +216,19 @@ a:hover {
     border-bottom: 2px solid #111;
 }
 
-/* ===== FOOTER ===== */
+/* FOOTER */
 footer {
     background: #fff;
     color: #888;
     text-align: center;
     margin-top: 32px;
-    padding: 1em 0;
+    padding: 4px 0 2px 0;
     border-top: 1px solid #eee;
     font-size: 0.65rem;
     opacity: 0.7;
 }
 
-/* ===== RESPONSIVE ===== */
+/* RESPONSIVE */
 @media (max-width: 768px) {
     main { padding: 12px; }
     article { padding: 12px 16px; border-radius: 0 12px 12px 0; margin: 70px auto; }
@@ -245,30 +237,17 @@ footer {
 }
 
 @media (max-width: 600px) {
-    h1 { font-size: clamp(2rem, 8vw, 3rem); padding: 20px 0; margin-bottom: 24px; }
-    .secondtitle { font-size: clamp(1.4rem, 5vw, 2rem); margin-bottom: 16px; }
+    h1 { font-size: 3rem; padding: 20px 0; margin-bottom: 24px; }
+    .secondtitle { font-size: 2rem; margin-bottom: 16px; }
     main { padding: 8px; }
     article { padding: 8px 8px; border-radius: 0; border-left: 1px solid #111; margin: 60px auto; }
     .gallery-grid { gap: 4px; }
     .gallery-list { gap: 40px; }
     .gallery-list figcaption { font-size: 0.85rem; }
-
-    /* Responsive Nav Extra */
-    header nav ul { gap: 0.8em; }
-    header nav ul li { font-size: 0.85rem; }
 }
 
 @media (max-width: 400px) {
     article { margin: 50px auto; }
     .gallery-grid img { width: 100%; height: auto; }
     .gallery-list { gap: 32px; }
-}
-
-.nowrap {
-    white-space: nowrap;
-}
-@media (max-width: 600px) {
-    .nowrap {
-        white-space: nowrap;
-    }
 }
