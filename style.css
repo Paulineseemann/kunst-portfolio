@@ -30,15 +30,17 @@ p, ul, li, a, main, article, footer {
     font-size: 0.98rem;
 }
 
-/* HEADER */
+/* ===== HEADER ===== */
 header {
     margin-bottom: 16px;
+    padding: 0 12px; /* Abstand zum Rand auf allen Geräten */
 }
 
 header nav ul {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap; /* Zeilenumbruch bei kleinen Bildschirmen */
     gap: 1.5em;
     padding: 0;
     margin: 0;
@@ -53,6 +55,19 @@ header nav ul li::before {
     font-size: 1.1em;
     font-family: 'Didot', Didot, 'Bodoni MT', serif;
     font-weight: bold;
+}
+
+/* RESPONSIVE HEADER NAV */
+@media (max-width: 600px) {
+    header {
+        padding: 0 16px; /* mehr Abstand links/rechts auf Handy */
+    }
+    header nav ul {
+        gap: 1em; /* etwas enger, aber bleibt mittig */
+    }
+    header nav ul li {
+        font-size: 0.85rem;
+    }
 }
 
 /* TITEL */
