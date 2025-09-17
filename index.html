@@ -1,208 +1,68 @@
-/* Importiere Didot als Webfont */
-@import url('https://fonts.googleapis.com/css2?family=Didot:wght@400;700&display=swap');
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Kunst Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Portfolio Pauline Seemann</h1>
+    <nav>
+      <ul>
+        <li><a href="#about">Über mich</a></li>
+        <li><a href="#gallery">Galerie</a></li>
+        <li><a href="#contact">Kontakt</a></li>
+      </ul>
+    </nav>
+  </header>
 
-body {
-    background: #fff;
-    min-height: 100vh;
-    margin: 0;
-    padding: 0;
-    color: #111;
-    background-image: url('https://www.transparenttextures.com/patterns/symphony.png');
-    box-sizing: border-box;
-}
+  <main>
+    <!-- Über mich -->
+    <article>
+      <section id="about">
+        <h2 class="secondtitle">Über mich</h2>
+        <p>
+          Hi, ich bin Pauline Seemann und studiere Visuelle Kommunikation an der Hochschule für Bildende Künste Braunschweig.
+          Auf dieser Seite zeige ich Arbeiten, die in den letzten Jahren entstanden sind – vor allem Kohlezeichnungen, aber auch kleinere Projekte wie Postkarten und Hefte.
+          <br>Alle gezeigten Werke können erworben werden. Bei Interesse freue ich mich über eine Nachricht.
+        </p>
+      </section>
+    </article>
 
-h1, h2, h3, h4, h5, h6, .secondtitle {
-    font-family: 'Didot', Didot, "Bodoni MT", serif;
-    color: #111;
-    letter-spacing: 0.12em;
-    font-weight: bold;
-}
+    <!-- Galerie -->
+    <article>
+      <section id="gallery">
+        <h2 class="secondtitle">Galerie</h2>
+        <p>Ein kleiner Überblick über meine Arbeiten – die gesamte Auswahl findest du in den Kategorien unten.</p>
+        
+        <div class="gallery-grid">
+          <img src="https://paulineseemann.github.io/kunst-portfolio/250507_agatha55874-min.jpg" alt="Bild 1">
+          <img src="https://paulineseemann.github.io/kunst-portfolio/250507_agatha55875-min.jpg" alt="Bild 2">
+          <img src="https://paulineseemann.github.io/kunst-portfolio/250507_agatha55877-min.jpg" alt="Bild 3">
+          <img src="https://paulineseemann.github.io/kunst-portfolio/250507_agatha55895-min.jpg" alt="Bild 4">
+        </div>
+        
+        <ul>
+          <li><a href="#">Kohlezeichnungen</a></li>
+          <li><a href="#">Postkarten</a></li>
+          <li><a href="#">Sonstiges</a></li>
+        </ul>
+      </section>
+    </article>
 
-p, ul, li, a, main, article, footer {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    color: #111;
-    font-size: 0.98rem;
-}
+    <!-- Kontakt -->
+    <article>
+      <section id="contact">
+        <h2 class="secondtitle">Kontakt</h2>
+        <p>Du möchtest mit mir in Kontakt treten? Schreibe mir gerne eine E-Mail an <a href="mailto:pauline.seemann@gmx.de">pauline.seemann@gmx.de</a> oder eine DM über Instagram @ppauline.s.</p>
+      </section>
+    </article>
+  </main>
 
-/* ==== HEADER ==== */
-header {
-    margin-bottom: 16px;
-}
-
-header nav ul {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1.5em;
-    padding: 0;
-    margin: 0;
-    list-style: none;
-}
-
-header nav ul li::before {
-    content: '→';
-    margin-right: 6px;
-    color: #111;
-    opacity: 0.18;
-    font-size: 1.1em;
-    font-family: 'Didot', Didot, 'Bodoni MT', serif;
-    font-weight: bold;
-}
-
-/* ==== TITEL ==== */
-h1 {
-    padding: 32px 0 16px 0;
-    text-align: center;
-    text-transform: uppercase;
-    font-size: 5rem;
-    margin-top: 0;
-    margin-bottom: 48px;
-    border-bottom: 1px solid #222;
-    position: relative;
-}
-
-h1::after {
-    content: '';
-    display: block;
-    width: 80px;
-    height: 4px;
-    background: repeating-linear-gradient(90deg, #111 0 20px, transparent 20px 40px);
-    margin: 32px auto 0 auto;
-    border-radius: 2px;
-    opacity: 0.25;
-}
-
-.secondtitle {
-    text-align: left;
-    margin-bottom: 32px;
-    font-size: 2.2rem;
-    letter-spacing: 0.08em;
-    color: #111;
-    border-bottom: 1px solid #222;
-    position: relative;
-}
-
-/* ==== MAIN / ARTICLE ==== */
-main {
-    padding: 32px;
-    max-width: 700px;
-    margin: 16px auto;
-    background: #fff;
-}
-
-article {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    text-align: left;
-    max-width: 700px;
-    width: 100%;
-    margin: 32px auto;
-    background: rgba(0,0,0,0.01);
-    padding: 16px 24px;
-    gap: 1.5em;
-    border-radius: 0 32px 32px 0;
-    border-left: 2px solid #111;
-    box-shadow: 0 2px 16px #0001;
-}
-
-article:hover {
-    background: #fafafa;
-    box-shadow: 0 8px 32px #0002;
-}
-
-/* ==== GALERIE ==== */
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* immer 2 Spalten */
-    gap: 8px; 
-    max-width: 100%;
-    margin: 0 auto 36px auto;
-}
-
-.gallery-grid img {
-    display: block;
-    width: 100%;   /* passt in die Spalte */
-    height: auto;  /* proportional */
-    object-fit: contain; /* keine Zuschneidung */
-    border-radius: 7px;
-}
-
-/* ==== TEXT / LISTE / LINKS ==== */
-p {
-    margin-bottom: 2em;
-    line-height: 2;
-}
-
-ul {
-    list-style: none;
-    padding: 0;
-    line-height: 2.2;
-}
-
-ul li {
-    margin-bottom: 1.2em;
-    padding-left: 1.5em;
-    position: relative;
-}
-
-ul li::before {
-    content: '→';
-    position: absolute;
-    left: 0;
-    color: #111;
-    opacity: 0.18;
-}
-
-/* ==== LINKS ==== */
-a {
-    color: #111;
-    border-bottom: 1px solid #111;
-    text-decoration: none;
-    font-weight: 500;
-    padding: 2px;
-    transition: border-bottom 0.2s;
-}
-
-a:hover {
-    border-bottom: 2px solid #111;
-}
-
-/* ==== FOOTER ==== */
-footer {
-    background: #fff;
-    color: #888;
-    text-align: center;
-    margin-top: 32px;
-    padding: 4px 0 2px 0;
-    border-top: 1px solid #eee;
-    font-size: 0.65rem;
-    opacity: 0.7;
-}
-
-footer img {
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
-/* ==== RESPONSIVE ==== */
-@media (max-width: 768px) {
-    main { padding: 16px; }
-    article { padding: 12px 16px; }
-    .gallery-grid { gap: 8px; }
-}
-
-@media (max-width: 600px) {
-    h1 { font-size: 3rem; padding: 20px 0; margin-bottom: 24px; }
-    .secondtitle { font-size: 2rem; margin-bottom: 16px; }
-    main { padding: 12px 2vw; }
-    article { padding: 8px 12px; }
-    .gallery-grid img { width: 100%; height: auto; } /* proportional */
-}
-
-@media (max-width: 400px) {
-    .gallery-grid img { width: 100%; height: auto; } /* kleinste Geräte */
-}
+  <footer>
+    <p>&copy; 2025 Pauline Seemann – Portfolio</p>
+  </footer>
+</body>
+</html>
