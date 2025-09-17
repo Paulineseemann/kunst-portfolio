@@ -11,6 +11,7 @@ body {
     box-sizing: border-box;
 }
 
+/* TYPOGRAFIE */
 h1, h2, h3, h4, h5, h6, .secondtitle {
     font-family: 'Didot', Didot, "Bodoni MT", serif;
     color: #111;
@@ -24,7 +25,7 @@ p, ul, li, a, main, article, footer {
     font-size: 0.98rem;
 }
 
-/* ==== HEADER ==== */
+/* HEADER */
 header {
     margin-bottom: 16px;
 }
@@ -49,7 +50,7 @@ header nav ul li::before {
     font-weight: bold;
 }
 
-/* ==== TITEL ==== */
+/* TITEL */
 h1 {
     padding: 32px 0 16px 0;
     text-align: center;
@@ -80,14 +81,14 @@ h1::after {
     color: #111;
     border-bottom: 1px solid #222;
     position: relative;
+    text-transform: uppercase;
 }
 
-/* ==== MAIN / ARTICLE ==== */
+/* MAIN & ARTICLE */
 main {
-    padding: 32px;
-    max-width: 700px;
-    margin: 16px auto;
-    background: #fff;
+    padding: 16px;
+    max-width: 100%;
+    margin: 0 auto;
 }
 
 article {
@@ -96,15 +97,16 @@ article {
     justify-content: center;
     align-items: flex-start;
     text-align: left;
-    max-width: 700px;
     width: 100%;
-    margin: 32px auto;
+    max-width: 100%;
+    margin: 16px 0;
     background: rgba(0,0,0,0.01);
     padding: 16px 24px;
     gap: 1.5em;
-    border-radius: 0 32px 32px 0;
+    border-radius: 0 16px 16px 0;
     border-left: 2px solid #111;
     box-shadow: 0 2px 16px #0001;
+    transition: box-shadow 0.3s, background 0.3s;
 }
 
 article:hover {
@@ -112,24 +114,24 @@ article:hover {
     box-shadow: 0 8px 32px #0002;
 }
 
-/* ==== GALERIE ==== */
+/* GALERIE */
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* immer 2 Spalten */
-    gap: 8px; 
-    max-width: 100%;
+    grid-template-columns: repeat(2, 1fr); /* 2 Spalten */
+    gap: 8px;
+    width: 100%;
     margin: 0 auto 36px auto;
 }
 
 .gallery-grid img {
     display: block;
-    width: 100%;   /* passt in die Spalte */
-    height: auto;  /* proportional */
-    object-fit: contain; /* keine Zuschneidung */
+    width: 100%;
+    height: auto;           /* proportional hochkant-rechteckig */
+    object-fit: contain;    /* keine Zuschneidung */
     border-radius: 7px;
 }
 
-/* ==== TEXT / LISTE / LINKS ==== */
+/* TEXT / LISTE / LINKS */
 p {
     margin-bottom: 2em;
     line-height: 2;
@@ -155,7 +157,7 @@ ul li::before {
     opacity: 0.18;
 }
 
-/* ==== LINKS ==== */
+/* LINKS */
 a {
     color: #111;
     border-bottom: 1px solid #111;
@@ -169,7 +171,7 @@ a:hover {
     border-bottom: 2px solid #111;
 }
 
-/* ==== FOOTER ==== */
+/* FOOTER */
 footer {
     background: #fff;
     color: #888;
@@ -188,21 +190,23 @@ footer img {
     object-fit: cover;
 }
 
-/* ==== RESPONSIVE ==== */
+/* RESPONSIVE */
 @media (max-width: 768px) {
-    main { padding: 16px; }
-    article { padding: 12px 16px; }
-    .gallery-grid { gap: 8px; }
+    main { padding: 12px; }
+    article { padding: 12px 16px; border-radius: 0 12px 12px 0; }
+    .gallery-grid { gap: 6px; }
 }
 
 @media (max-width: 600px) {
     h1 { font-size: 3rem; padding: 20px 0; margin-bottom: 24px; }
     .secondtitle { font-size: 2rem; margin-bottom: 16px; }
-    main { padding: 12px 2vw; }
-    article { padding: 8px 12px; }
-    .gallery-grid img { width: 100%; height: auto; } /* proportional */
+    main { padding: 8px; }
+    article { padding: 8px 8px; border-radius: 0; border-left: 1px solid #111; }
+    .gallery-grid { gap: 4px; }
+    .gallery-grid img { width: 100%; height: auto; }
 }
 
 @media (max-width: 400px) {
-    .gallery-grid img { width: 100%; height: auto; } /* kleinste Geräte */
+    .gallery-grid img { width: 100%; height: auto; }
+    article { margin: 12px 0; }
 }
