@@ -75,12 +75,16 @@ h1 {
     padding: 32px 0 16px 0;
     text-align: center;
     text-transform: uppercase;
-    font-size: clamp(2rem, 8vw, 5rem); /* flexibel */
+    font-size: clamp(1.5rem, 7vw, 5rem); /* flexibler – wird kleiner statt umbrechen */
     margin-top: 0;
     margin-bottom: 48px;
     border-bottom: 1px solid #222;
     position: relative;
-    word-break: break-word; /* bricht lange Wörter sauber */
+
+    /* verhindert Umbrüche */
+    white-space: nowrap;
+    word-break: normal;
+    overflow-wrap: normal;
 }
 
 h1::after {
@@ -150,7 +154,6 @@ article:hover {
     width: 100%;
     height: auto;
     object-fit: contain;
-    
 }
 
 /* GALERIE LISTE (Detailseite) */
@@ -175,7 +178,6 @@ article:hover {
     max-width: 700px;
     margin: 0 auto;
     height: auto;
-    
     box-shadow: 0 4px 16px #0002;
 }
 
@@ -253,7 +255,7 @@ footer {
 }
 
 @media (max-width: 600px) {
-    h1 { font-size: 3rem; padding: 20px 0; margin-bottom: 24px; }
+    h1 { font-size: clamp(1.2rem, 9vw, 3rem); } /* Titel auf Handy noch flexibler */
     .secondtitle { font-size: 2rem; margin-bottom: 16px; }
     main { padding: 8px; }
     article { padding: 8px 8px; border-radius: 0; border-left: 1px solid #111; margin: 60px auto; }
