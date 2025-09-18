@@ -80,7 +80,7 @@ h1 {
     margin-bottom: 48px;
     border-bottom: 1px solid #222;
     position: relative;
-    word-break: break-word;
+    word-break: break-word; /* bricht lange Wörter sauber */
 }
 
 h1::after {
@@ -88,18 +88,10 @@ h1::after {
     display: block;
     width: 80px;
     height: 4px;
-    background: repeating-linear-gradient(
-        90deg,
-        #888 0 12px,
-        transparent 12px 20px,
-        #888 20px 32px,
-        transparent 32px 40px,
-        #888 40px 52px,
-        transparent 52px 80px
-    );
+    background: repeating-linear-gradient(90deg, #111 0 20px, transparent 20px 40px);
     margin: 32px auto 0 auto;
     border-radius: 2px;
-    opacity: 0.7;
+    opacity: 0.25;
 }
 
 .secondtitle {
@@ -158,6 +150,7 @@ article:hover {
     width: 100%;
     height: auto;
     object-fit: contain;
+    
 }
 
 /* GALERIE LISTE (Detailseite) */
@@ -182,6 +175,7 @@ article:hover {
     max-width: 700px;
     margin: 0 auto;
     height: auto;
+    
     box-shadow: 0 4px 16px #0002;
 }
 
@@ -260,17 +254,21 @@ footer {
 
 @media (max-width: 600px) {
     h1 {
-        font-size: clamp(1.4rem, 7vw, 2.4rem); /* skaliert automatisch */
-        padding: 20px 0;
+        font-size: clamp(1.4rem, 7vw, 2.4rem);
+        padding: 20px 5%; /* seitlicher Rand */
         margin-bottom: 24px;
-        white-space: nowrap;       /* kein Umbruch */
-        overflow-wrap: normal;     /* Wörter nicht trennen */
+        overflow-wrap: normal; /* Wörter nicht mitten trennen */
+        word-break: keep-all;  /* nur an Leerzeichen umbrechen */
+        text-align: center;
     }
     .secondtitle {
         font-size: clamp(1.2rem, 6vw, 1.8rem);
         margin-bottom: 16px;
-        white-space: nowrap;
+        white-space: nowrap;   /* NIE umbrechen */
         overflow-wrap: normal;
+        word-break: keep-all;
+        padding: 0 5%;         /* Abstand zu den Seiten */
+        text-align: left;
     }
     main { padding: 8px; }
     article { padding: 8px 8px; border-radius: 0; border-left: 1px solid #111; margin: 60px auto; }
