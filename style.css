@@ -150,14 +150,14 @@ article:hover {
     width: 100%;
     height: auto;
     object-fit: contain;
- 
+    
 }
 
 /* GALERIE LISTE (Detailseite) */
 .gallery-list {
     display: flex;
     flex-direction: column;
-    gap: 100px; /* größerer Abstand zwischen den Werken */
+    gap: 140px; /* noch mehr Abstand zwischen den Werken */
     max-width: 700px;
     margin: 0 auto;
     width: 100%;
@@ -249,7 +249,7 @@ footer {
     main { padding: 12px; }
     article { padding: 12px 16px; border-radius: 0 12px 12px 0; margin: 70px auto; }
     .gallery-grid { gap: 6px; }
-    .gallery-list { gap: 64px; padding: 0 8px; } /* etwas kleiner */
+    .gallery-list { gap: 90px; padding: 0 8px; } /* Tablet */
 }
 
 @media (max-width: 600px) {
@@ -258,12 +258,12 @@ footer {
     main { padding: 8px; }
     article { padding: 8px 8px; border-radius: 0; border-left: 1px solid #111; margin: 60px auto; }
     .gallery-grid { gap: 4px; }
-    .gallery-list { gap: 48px; } /* kleiner für Handy */
+    .gallery-list { gap: 64px; } /* Handy */
     .gallery-list figcaption { font-size: 0.85rem; }
 }
 
 @media (max-width: 400px) {
     article { margin: 50px auto; }
     .gallery-grid img { width: 100%; height: auto; }
-    .gallery-list { gap: 32px; } /* kompakt auf sehr kleinen Screens */
+    .gallery-list { gap: 48px; } /* sehr kleine Screens */
 }
