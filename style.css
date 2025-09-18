@@ -75,12 +75,12 @@ h1 {
     padding: 32px 0 16px 0;
     text-align: center;
     text-transform: uppercase;
-    font-size: clamp(2rem, 8vw, 5rem); /* passt sich flexibel an Bildschirmbreite an */
+    font-size: clamp(2rem, 8vw, 5rem); /* flexibel */
     margin-top: 0;
     margin-bottom: 48px;
     border-bottom: 1px solid #222;
     position: relative;
-    word-break: break-word; /* verhindert Überlappen bei langen Wörtern */
+    word-break: break-word; /* bricht lange Wörter sauber */
 }
 
 h1::after {
@@ -150,15 +150,15 @@ article:hover {
     width: 100%;
     height: auto;
     object-fit: contain;
-    
+ 
 }
 
 /* GALERIE LISTE (Detailseite) */
 .gallery-list {
     display: flex;
     flex-direction: column;
-    gap: 64px; /* großer Abstand zwischen den Werken */
-    max-width: 700px;   /* gleiche Breite wie article */
+    gap: 100px; /* größerer Abstand zwischen den Werken */
+    max-width: 700px;
     margin: 0 auto;
     width: 100%;
 }
@@ -175,7 +175,7 @@ article:hover {
     max-width: 700px;
     margin: 0 auto;
     height: auto;
-   
+    
     box-shadow: 0 4px 16px #0002;
 }
 
@@ -249,21 +249,21 @@ footer {
     main { padding: 12px; }
     article { padding: 12px 16px; border-radius: 0 12px 12px 0; margin: 70px auto; }
     .gallery-grid { gap: 6px; }
-    .gallery-list { gap: 48px; padding: 0 8px; }
+    .gallery-list { gap: 64px; padding: 0 8px; } /* etwas kleiner */
 }
 
 @media (max-width: 600px) {
-    h1 { font-size: clamp(1.8rem, 10vw, 3rem); padding: 20px 0; margin-bottom: 24px; }
+    h1 { font-size: 3rem; padding: 20px 0; margin-bottom: 24px; }
     .secondtitle { font-size: 2rem; margin-bottom: 16px; }
     main { padding: 8px; }
     article { padding: 8px 8px; border-radius: 0; border-left: 1px solid #111; margin: 60px auto; }
     .gallery-grid { gap: 4px; }
-    .gallery-list { gap: 40px; }
+    .gallery-list { gap: 48px; } /* kleiner für Handy */
     .gallery-list figcaption { font-size: 0.85rem; }
 }
 
 @media (max-width: 400px) {
     article { margin: 50px auto; }
     .gallery-grid img { width: 100%; height: auto; }
-    .gallery-list { gap: 32px; }
+    .gallery-list { gap: 32px; } /* kompakt auf sehr kleinen Screens */
 }
