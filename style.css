@@ -33,14 +33,14 @@ p, ul, li, a, main, article, footer {
 /* ===== HEADER ===== */
 header {
     margin-bottom: 16px;
-    padding: 0 12px;
+    padding: 0 12px; /* Abstand zum Rand auf allen Geräten */
 }
 
 header nav ul {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* Zeilenumbruch bei kleinen Bildschirmen */
     gap: 1.5em;
     padding: 0;
     margin: 0;
@@ -60,10 +60,10 @@ header nav ul li::before {
 /* RESPONSIVE HEADER NAV */
 @media (max-width: 600px) {
     header {
-        padding: 0 16px;
+        padding: 0 16px; /* mehr Abstand links/rechts auf Handy */
     }
     header nav ul {
-        gap: 1em;
+        gap: 1em; /* etwas enger, aber bleibt mittig */
     }
     header nav ul li {
         font-size: 0.85rem;
@@ -75,23 +75,14 @@ h1 {
     padding: 32px 0 16px 0;
     text-align: center;
     text-transform: uppercase;
-    font-size: clamp(1rem, 7.5vw, 5rem);
+    font-size: clamp(2rem, 8vw, 5rem); /* flexibel */
     margin-top: 0;
     margin-bottom: 48px;
     border-bottom: 1px solid #222;
     position: relative;
-    white-space: nowrap;
-    word-break: normal;
-    overflow-wrap: normal;
-    hyphens: none;
-    -webkit-hyphens: none;
-    -moz-hyphens: none;
-    letter-spacing: 0.12em;
-    max-width: 100%;
-    display: block;
+    word-break: break-word;
 }
 
-/* drei kleine graue Striche */
 h1::after {
     content: '';
     display: block;
@@ -100,11 +91,11 @@ h1::after {
     background: repeating-linear-gradient(
         90deg,
         #888 0 12px,
-        transparent 12px 18px,
-        #888 18px 30px,
-        transparent 30px 36px,
-        #888 36px 48px,
-        transparent 48px 80px
+        transparent 12px 20px,
+        #888 20px 32px,
+        transparent 32px 40px,
+        #888 40px 52px,
+        transparent 52px 80px
     );
     margin: 32px auto 0 auto;
     border-radius: 2px;
@@ -114,18 +105,12 @@ h1::after {
 .secondtitle {
     text-align: left;
     margin-bottom: 32px;
-    font-size: clamp(1rem, 6vw, 2.2rem);
+    font-size: 2.2rem;
     letter-spacing: 0.08em;
     color: #111;
     border-bottom: 1px solid #222;
     position: relative;
     text-transform: uppercase;
-    white-space: nowrap;
-    word-break: normal;
-    overflow-wrap: normal;
-    hyphens: none;
-    -webkit-hyphens: none;
-    -moz-hyphens: none;
 }
 
 /* MAIN & ARTICLE */
@@ -142,8 +127,8 @@ article {
     align-items: flex-start;
     text-align: left;
     width: 100%;
-    max-width: 700px;
-    margin: 80px auto;
+    max-width: 700px; /* Begrenzung wie Galerie */
+    margin: 80px auto; /* mittig */
     background: rgba(0,0,0,0.01);
     padding: 16px 24px;
     gap: 1.5em;
@@ -161,7 +146,7 @@ article:hover {
 /* GALERIE GRID (Startseite) */
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr); /* immer 2 Spalten */
     gap: 8px;
     width: 100%;
     max-width: 100%;
@@ -179,7 +164,7 @@ article:hover {
 .gallery-list {
     display: flex;
     flex-direction: column;
-    gap: 140px;
+    gap: 140px; /* noch mehr Abstand zwischen den Werken */
     max-width: 700px;
     margin: 0 auto;
     width: 100%;
@@ -270,21 +255,32 @@ footer {
     main { padding: 12px; }
     article { padding: 12px 16px; border-radius: 0 12px 12px 0; margin: 70px auto; }
     .gallery-grid { gap: 6px; }
-    .gallery-list { gap: 90px; padding: 0 8px; }
+    .gallery-list { gap: 90px; padding: 0 8px; } /* Tablet */
 }
 
 @media (max-width: 600px) {
-    h1 { font-size: clamp(0.9rem, 9vw, 3rem); letter-spacing: 0.06em; }
-    .secondtitle { font-size: clamp(0.9rem, 7vw, 2rem); letter-spacing: 0.06em; }
+    h1 {
+        font-size: clamp(1.4rem, 7vw, 2.4rem); /* skaliert automatisch */
+        padding: 20px 0;
+        margin-bottom: 24px;
+        white-space: nowrap;       /* kein Umbruch */
+        overflow-wrap: normal;     /* Wörter nicht trennen */
+    }
+    .secondtitle {
+        font-size: clamp(1.2rem, 6vw, 1.8rem);
+        margin-bottom: 16px;
+        white-space: nowrap;
+        overflow-wrap: normal;
+    }
     main { padding: 8px; }
     article { padding: 8px 8px; border-radius: 0; border-left: 1px solid #111; margin: 60px auto; }
     .gallery-grid { gap: 4px; }
-    .gallery-list { gap: 64px; }
+    .gallery-list { gap: 64px; } /* Handy */
     .gallery-list figcaption { font-size: 0.85rem; }
 }
 
 @media (max-width: 400px) {
     article { margin: 50px auto; }
     .gallery-grid img { width: 100%; height: auto; }
-    .gallery-list { gap: 48px; }
+    .gallery-list { gap: 48px; } /* sehr kleine Screens */
 }
