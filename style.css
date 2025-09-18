@@ -253,23 +253,8 @@ footer {
 }
 
 @media (max-width: 600px) {
-    h1 {
-        font-size: clamp(1.4rem, 7vw, 2.4rem);
-        padding: 20px 5%; /* seitlicher Rand */
-        margin-bottom: 24px;
-        overflow-wrap: normal; /* Wörter nicht mitten trennen */
-        word-break: keep-all;  /* nur an Leerzeichen umbrechen */
-        text-align: center;
-    }
-    .secondtitle {
-        font-size: clamp(1.2rem, 6vw, 1.8rem);
-        margin-bottom: 16px;
-        white-space: nowrap;   /* NIE umbrechen */
-        overflow-wrap: normal;
-        word-break: keep-all;
-        padding: 0 5%;         /* Abstand zu den Seiten */
-        text-align: left;
-    }
+    h1 { font-size: 3rem; padding: 20px 0; margin-bottom: 24px; }
+    .secondtitle { font-size: 2rem; margin-bottom: 16px; }
     main { padding: 8px; }
     article { padding: 8px 8px; border-radius: 0; border-left: 1px solid #111; margin: 60px auto; }
     .gallery-grid { gap: 4px; }
@@ -281,4 +266,4 @@ footer {
     article { margin: 50px auto; }
     .gallery-grid img { width: 100%; height: auto; }
     .gallery-list { gap: 48px; } /* sehr kleine Screens */
-}
+} jetzt bricht der titel Postkarten bei Postkarten.html schon wieder um auf dem handy. es soll dann kleiner werden und keine Silbentrennung oder Umrüche geben 
